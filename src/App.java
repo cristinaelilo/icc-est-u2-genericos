@@ -32,25 +32,24 @@ public class App {
         System.out.println("Valor: " + par.obtenerValor());
 
         // -----------------------------------------------------------------------
-        // Crear arreglo de nombres para las personas
+        // Crear arreglo de nombres y edades para las personas
         String[] nombres = {
             "Cristina", "Juan", "Ariana", "Carlos", "Denisse", 
             "Luis", "Paula", "José", "Danna", "Pedro"
         };
 
-        // Crear un arreglo de 10 Personas con datos
+        int[] edades = {19, 21, 17, 18, 22, 20, 16, 15, 18, 23}; 
+
         Persona[] personas = new Persona[10];
         for (int i = 0; i < personas.length; i++) {
             personas[i] = new Persona();
-            personas[i].setNombre(nombres[i]); // Asignar nombre del arreglo
-            personas[i].setEdad(15 + i); // Edades entre 15 y 24
+            personas[i].setNombre(nombres[i]); 
+            personas[i].setEdad(edades[i]); 
         }
 
-        // Crear arreglos tipo Par
         List<Par<String, Integer>> mayores = new ArrayList<>();
         List<Par<Integer, String>> menores = new ArrayList<>();
 
-        // Clasificar las personas en mayores y menores de edad
         for (Persona p : personas) {
             if (p.getEdad() >= 18) {
                 mayores.add(new Par<>(p.getNombre(), p.getEdad()));
